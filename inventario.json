@@ -1,0 +1,33 @@
+{
+    "_id": "ObjectId('bfg453ygtb45eybg54b9ybg45y8hb9u5b')",
+    "name": "Camisa manga corta",
+    "price": 25.99,
+    "category": "Camisas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Blanco",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Blanco",
+        "stock": 30
+      },
+      {
+        "size": "L",
+        "color": "Blanco",
+        "stock": 10
+      },
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 15
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 25
+      }
+    ]
+  }
