@@ -1,0 +1,17 @@
+
+--URL GENERADOR--
+http://127.0.0.1:5000/generator?name=nombre_del_producto&stock=cantidad&color=color&size=talla
+curl -X GET "http://127.0.0.1:5000/generator?name=Camisa%20manga%20corta&stock=20&color=Blanco&size=S"
+
+
+--URL LECTOR SUMA--
+http://127.0.0.1:5000/qr_suma
+curl -X POST -H "Content-Type: application/json" -d '{"name": "nombre_del_producto", "size": "talla", "color": "color", "stock": "cantidad"}' http://127.0.0.1:5001/qr_suma
+
+--URL LECTOR RESTA--
+http://127.0.0.1:5000/qr_resta
+curl -X POST -H "Content-Type: application/json" -d '{"name": "nombre_del_producto", "size": "talla", "color": "color", "stock": "cantidad"}' http://127.0.0.1:5001/qr_resta
+
+--EJEMPLO--
+http://127.0.0.1:5000/generator?name=Camisa manga corta&stock=10&color=Blanco&size=S
+curl -X POST -H "Content-Type: application/json" -d '{"name": "Camisa manga corta", "size": "S", "color": "Blanco", "stock": "10"}' http://127.0.0.1:5001/qr_suma
