@@ -14,16 +14,28 @@ db = client["sinc_stock"]
 def generator():
     # Obtener los argumentos de la URL
     product_name = request.args.get('name')
+    requested_stock = int(request.args.get('stock'))
 
     # Verificar si el producto existe en la base de datos
     product = db.inventory.find_one({"name": product_name})
     if not product:
         return "\n \nEl producto no existe en la base de datos."
 
+    # Buscar el stock disponible para el tamaño y color específicos
+    stock_available = 0
+    for variant in product['variants']:
+        if variant['size'] == request.args.get('size') and variant['color'] == request.args.get('color'):
+            stock_available = variant['stock']
+            break
+
+    # Validar que el stock solicitado sea menor o igual al stock disponible
+    if requested_stock > stock_available:
+        return f"\n \nEl stock solicitado ({requested_stock}) es mayor que el stock disponible ({stock_available})."
+
     # Convertir los datos del producto a una cadena JSON
     qr_data = {
         "name": product_name,
-        "stock": request.args.get('stock'),
+        "stock": requested_stock,
         "color": request.args.get('color'),
         "size": request.args.get('size') 
     }
@@ -40,3 +52,5 @@ def generator():
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000, debug=True)
+
+exit
