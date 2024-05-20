@@ -1,22 +1,21 @@
 
 --URL GENERADOR--
-http://127.0.0.1:5000/generator?name=nombre_del_producto&stock=cantidad&color=color&size=talla
-curl -X GET "http://127.0.0.1:5000/generator?name=Camisa_manga_corta&stock=51&color=Blanco&size=S"
+http://127.0.0.1:5000/generator?name=NombreDelProducto&stock=cantidad&color=color&size=talla
+curl -X GET "http://127.0.0.1:5000/generator?name=CamisaMangaCorta&stock=51&color=Blanco&size=S"
 
 
 --URL LECTOR SUMA--
-http://127.0.0.1:5000/qr_suma
-curl -X POST -H "Content-Type: application/json" -d '{"name": "nombre_del_producto", "size": "talla", "color": "color", "stock": "cantidad"}' http://127.0.0.1:5001/qr_suma
+curl -X POST "http://127.0.0.1:5000/qr_suma" -H "Content-Type: application/json" -d "{"name": "NombreDelProducto", "size": "talla", "color": "color", "stock": "cantidad"}" 
 
 --URL LECTOR RESTA--
 http://127.0.0.1:5000/qr_resta
-curl -X POST -H "Content-Type: application/json" -d '{"name": "nombre_del_producto", "size": "talla", "color": "color", "stock": "cantidad"}' http://127.0.0.1:5001/qr_resta
+curl -X POST "http://127.0.0.1:5001/qr_resta" -H "Content-Type: application/json" -d '{"name": "NombreDelProducto", "size": "talla", "color": "color", "stock": "cantidad"}' 
 
 --CONSULTA STOCK--
-curl -X GET "http://127.0.0.1:5000/query_stock?name=Camisa_manga_corta&size=M&color=Blanco"
+curl -X GET "http://127.0.0.1:5000/query_stock?name=CamisaMangaCorta&size=M&color=Blanco"
 
 
 
 --EJEMPLO--
 http://127.0.0.1:5000/generator?name=Camisa manga corta&stock=10&color=Blanco&size=S
-curl -X POST -H "Content-Type: application/json" -d '{"name": "Camisa manga corta", "size": "S", "color": "Blanco", "stock": "10"}' http://127.0.0.1:5001/qr_suma
+curl -X POST -H "Content-Type: application/json" -d '{"name": "CamisaMangaCorta", "size": "S", "color": "Blanco", "stock": "10"}' http://127.0.0.1:5000/qr_suma

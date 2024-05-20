@@ -23,12 +23,19 @@ def qr_resta():
         # Actualizar el stock del producto para la talla y color respectivos
         size = qr_content.get('size')
         color = qr_content.get('color')
-        stock = int(qr_content.get('stock'))
+        stock_change = int(qr_content.get('stock'))  # Cantidad a cambiar en el stock
 
         for variant in product['variants']:
             if variant['size'] == size and variant['color'] == color:
-                variant['stock'] -= stock
-                db.inventory.update_one({"_id": product["_id"]}, {"$set": {"variants": product['variants']}})
+                
+                # Actualizar el stock de la variante
+                variant['stock'] -= stock_change
+                
+                # Actualizar el totalStock del producto
+                product['totalStock'] -= stock_change
+                
+                # Actualizar el documento en la base de datos
+                db.inventory.update_one({"_id": product["_id"]}, {"$set": {"variants": product['variants'], "totalStock": product['totalStock']}})
                 return "\n \n Stock actualizado correctamente."
         
         return "\n \n No se encontró una variante correspondiente para actualizar el stock."
