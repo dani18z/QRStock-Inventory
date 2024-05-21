@@ -8,8 +8,8 @@ app = Flask(__name__)
 client = MongoClient("mongodb://localhost:27017/")
 db = client["sinc_stock"]
 
-@app.route("/qr_suma", methods=['POST'])
-def qr_suma():
+@app.route("/sum_stock", methods=['POST'])
+def sum_stock():
     # Obtener el contenido del código QR desde la solicitud
     qr_content = request.get_json()
 

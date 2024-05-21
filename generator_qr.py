@@ -10,8 +10,8 @@ app = Flask(__name__)
 client = MongoClient("mongodb://localhost:27017/")
 db = client["sinc_stock"]  
 
-@app.route("/generator", methods=['GET'])
-def generator():
+@app.route("/generator_qr", methods=['GET'])
+def generator_qr():
     # Obtener los argumentos de la URL
     product_name = request.args.get('name')
     requested_stock = int(request.args.get('stock'))
@@ -48,7 +48,9 @@ def generator():
     png_name = product_name + datetime.datetime.today().strftime('_%Y%m%d%H%M%S') + ".png"
     qr_code.png(png_name, scale=6)
 
-    return send_file(png_name, mimetype='image/png')
+    response = send_file(png_name, mimetype='image/png')
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000, debug=True)
