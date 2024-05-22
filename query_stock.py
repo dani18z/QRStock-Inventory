@@ -15,7 +15,7 @@ def query_stock():
     color = request.args.get('color')
 
     # Buscar el producto en la base de datos
-    product = db.inventory.find_one({"name": product_name})
+    product = db.products.find_one({"name": product_name})
 
     if product:
         if size and color:

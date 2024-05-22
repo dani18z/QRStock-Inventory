@@ -1,6 +1,6 @@
 
 --URL GENERADOR--
-http://127.0.0.1:5000/generator?name=NombreDelProducto&stock=cantidad&color=color&size=talla
+http://127.0.0.1:5000/generator_qr?name=NombreDelProducto&stock=cantidad&color=color&size=talla
 curl -X GET "http://127.0.0.1:5000/generator_qr?name=CamisaMangaCorta&stock=50&color=Blanco&size=S"
 
 

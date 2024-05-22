@@ -17,7 +17,7 @@ def sum_stock():
     product_name = qr_content.get('name')
 
     # Buscar el producto en la base de datos
-    product = db.inventory.find_one({"name": product_name})
+    product = db.products.find_one({"name": product_name})
 
     if product:
         # Actualizar el stock del producto para la talla y color respectivos
@@ -35,7 +35,7 @@ def sum_stock():
                 product['totalStock'] += stock_change
                 
                 # Actualizar el documento en la base de datos
-                db.inventory.update_one({"_id": product["_id"]}, {"$set": {"variants": product['variants'], "totalStock": product['totalStock']}})
+                db.products.update_one({"_id": product["_id"]}, {"$set": {"variants": product['variants'], "totalStock": product['totalStock']}})
                 return "\n \n Stock actualizado correctamente."
         
         return "\n \n No se encontró una variante correspondiente para actualizar el stock."

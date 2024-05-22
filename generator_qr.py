@@ -1,8 +1,10 @@
+#Importamos las librerias necesarias
 import json
 import datetime
 import pyqrcode
 from flask import Flask, request, send_file
 from pymongo import MongoClient
+
 
 app = Flask(__name__)
 
@@ -17,7 +19,7 @@ def generator_qr():
     requested_stock = int(request.args.get('stock'))
 
     # Verificar si el producto existe en la base de datos
-    product = db.inventory.find_one({"name": product_name})
+    product = db.products.find_one({"name": product_name})
     if not product:
         return "\n \nEl producto no existe en la base de datos."
 
@@ -52,6 +54,7 @@ def generator_qr():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+#Inicializamos el servidor
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000, debug=True)
 
