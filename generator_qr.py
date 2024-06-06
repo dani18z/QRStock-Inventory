@@ -8,7 +8,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-# Conexión a la base de datos MongoDB
+# Conexión a la base de datos MongoDBd
 client = MongoClient("mongodb://localhost:27017/")
 db = client["sinc_stock"]  
 
