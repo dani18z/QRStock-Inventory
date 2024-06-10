@@ -1,0 +1,728 @@
+[
+  {
+    "name": "CamisaMangaCorta",
+    "price": 25.99,
+    "category": "Camisas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Blanco",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Blanco",
+        "stock": 30
+      },
+      {
+        "size": "L",
+        "color": "Blanco",
+        "stock": 10
+      },
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 15
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 25
+      }
+    ],
+    "totalStock": 100
+  },
+  {
+    "name": "PantalonJeans",
+    "price": 45.99,
+    "category": "Pantalones",
+    "variants": [
+      {
+        "size": "28",
+        "color": "Azul",
+        "stock": 40
+      },
+      {
+        "size": "30",
+        "color": "Azul",
+        "stock": 50
+      },
+      {
+        "size": "32",
+        "color": "Azul",
+        "stock": 35
+      },
+      {
+        "size": "28",
+        "color": "Negro",
+        "stock": 25
+      },
+      {
+        "size": "30",
+        "color": "Negro",
+        "stock": 30
+      }
+    ],
+    "totalStock": 180
+  },
+  {
+    "name": "SueterCuelloV",
+    "price": 35.99,
+    "category": "Suéteres",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Gris",
+        "stock": 10
+      },
+      {
+        "size": "M",
+        "color": "Gris",
+        "stock": 20
+      },
+      {
+        "size": "L",
+        "color": "Gris",
+        "stock": 15
+      },
+      {
+        "size": "S",
+        "color": "Rojo",
+        "stock": 10
+      },
+      {
+        "size": "M",
+        "color": "Rojo",
+        "stock": 15
+      }
+    ],
+    "totalStock": 70
+  },
+  {
+    "name": "FaldaCorta",
+    "price": 22.99,
+    "category": "Faldas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 12
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 18
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 10
+      },
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 25
+      }
+    ],
+    "totalStock": 85
+  },
+  {
+    "name": "CamisetaDeportiva",
+    "price": 19.99,
+    "category": "Camisetas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Blanco",
+        "stock": 50
+      },
+      {
+        "size": "M",
+        "color": "Blanco",
+        "stock": 60
+      },
+      {
+        "size": "L",
+        "color": "Blanco",
+        "stock": 40
+      },
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 30
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 45
+      }
+    ],
+    "totalStock": 225
+  },
+  {
+    "name": "ChalecoDePluma",
+    "price": 55.99,
+    "category": "Chalecos",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 8
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 12
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 5
+      },
+      {
+        "size": "S",
+        "color": "Verde",
+        "stock": 7
+      },
+      {
+        "size": "M",
+        "color": "Verde",
+        "stock": 10
+      }
+    ],
+    "totalStock": 42
+  },
+  {
+    "name": "ChaquetaDeCuero",
+    "price": 120.99,
+    "category": "Chaquetas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Marrón",
+        "stock": 6
+      },
+      {
+        "size": "M",
+        "color": "Marrón",
+        "stock": 8
+      },
+      {
+        "size": "L",
+        "color": "Marrón",
+        "stock": 4
+      },
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 5
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 7
+      }
+    ],
+    "totalStock": 30
+  },
+  {
+    "name": "BlazerFormal",
+    "price": 75.99,
+    "category": "Blazers",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 15
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 20
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 10
+      },
+      {
+        "size": "S",
+        "color": "Gris",
+        "stock": 12
+      },
+      {
+        "size": "M",
+        "color": "Gris",
+        "stock": 18
+      }
+    ],
+    "totalStock": 75
+  },
+  {
+    "name": "VestidoDeFiesta",
+    "price": 89.99,
+    "category": "Vestidos",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Rojo",
+        "stock": 5
+      },
+      {
+        "size": "M",
+        "color": "Rojo",
+        "stock": 8
+      },
+      {
+        "size": "L",
+        "color": "Rojo",
+        "stock": 3
+      },
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 7
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 10
+      }
+    ],
+    "totalStock": 33
+  },
+  {
+    "name": "AbrigoLargo",
+    "price": 150.99,
+    "category": "Abrigos",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Beige",
+        "stock": 4
+      },
+      {
+        "size": "M",
+        "color": "Beige",
+        "stock": 6
+      },
+      {
+        "size": "L",
+        "color": "Beige",
+        "stock": 3
+      },
+      {
+        "size": "S",
+        "color": "Gris",
+        "stock": 5
+      },
+      {
+        "size": "M",
+        "color": "Gris",
+        "stock": 7
+      }
+    ],
+    "totalStock": 25
+  },
+  {
+    "name": "PoloClasica",
+    "price": 29.99,
+    "category": "Polos",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 25
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 30
+      },
+      {
+        "size": "L",
+        "color": "Azul",
+        "stock": 20
+      },
+      {
+        "size": "S",
+        "color": "Blanco",
+        "stock": 35
+      },
+      {
+        "size": "M",
+        "color": "Blanco",
+        "stock": 40
+      }
+    ],
+    "totalStock": 150
+  },
+  {
+    "name": "ShortDeportivo",
+    "price": 19.99,
+    "category": "Shorts",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 25
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 15
+      },
+      {
+        "size": "S",
+        "color": "Gris",
+        "stock": 30
+      },
+      {
+        "size": "M",
+        "color": "Gris",
+        "stock": 35
+      }
+    ],
+    "totalStock": 125
+  },
+  {
+    "name": "SudaderaConCapucha",
+    "price": 39.99,
+    "category": "Sudaderas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 25
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 30
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 20
+      },
+      {
+        "size": "S",
+        "color": "Rojo",
+        "stock": 35
+      },
+      {
+        "size": "M",
+        "color": "Rojo",
+        "stock": 40
+      }
+    ],
+    "totalStock": 150
+  },
+  {
+    "name": "LeggingsDeportivo",
+    "price": 24.99,
+    "category": "Leggings",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 30
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 40
+      },
+      {
+        "size": "L",
+        "color": "Negro",
+        "stock": 25
+      },
+      {
+        "size": "S",
+        "color": "Gris",
+        "stock": 35
+      },
+      {
+        "size": "M",
+        "color": "Gris",
+        "stock": 45
+      }
+    ],
+    "totalStock": 175
+  },
+  {
+    "name": "BermudaCasual",
+    "price": 21.99,
+    "category": "Bermudas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Beige",
+        "stock": 18
+      },
+      {
+        "size": "M",
+        "color": "Beige",
+        "stock": 22
+      },
+      {
+        "size": "L",
+        "color": "Beige",
+        "stock": 15
+      },
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 25
+      }
+    ],
+    "totalStock": 100
+  },
+  {
+    "name": "PantalonCargo",
+    "price": 49.99,
+    "category": "Pantalones",
+    "variants": [
+      {
+        "size": "28",
+        "color": "Verde",
+        "stock": 10
+      },
+      {
+        "size": "30",
+        "color": "Verde",
+        "stock": 15
+      },
+      {
+        "size": "32",
+        "color": "Verde",
+        "stock": 8
+      },
+      {
+        "size": "28",
+        "color": "Marrón",
+        "stock": 12
+      },
+      {
+        "size": "30",
+        "color": "Marrón",
+        "stock": 20
+      }
+    ],
+    "totalStock": 65
+  },
+  {
+    "name": "VestidoVeraniego",
+    "price": 35.99,
+    "category": "Vestidos",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Amarillo",
+        "stock": 12
+      },
+      {
+        "size": "M",
+        "color": "Amarillo",
+        "stock": 18
+      },
+      {
+        "size": "L",
+        "color": "Amarillo",
+        "stock": 10
+      },
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 15
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 20
+      }
+    ],
+    "totalStock": 75
+  },
+  {
+    "name": "TrajeDeBaño",
+    "price": 29.99,
+    "category": "Ropa de Baño",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Rojo",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Rojo",
+        "stock": 25
+      },
+      {
+        "size": "L",
+        "color": "Rojo",
+        "stock": 15
+      },
+      {
+        "size": "S",
+        "color": "Negro",
+        "stock": 30
+      },
+      {
+        "size": "M",
+        "color": "Negro",
+        "stock": 35
+      }
+    ],
+    "totalStock": 125
+  },
+  {
+    "name": "ChamarraDeNieve",
+    "price": 129.99,
+    "category": "Chamarras",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Blanco",
+        "stock": 8
+      },
+      {
+        "size": "M",
+        "color": "Blanco",
+        "stock": 12
+      },
+      {
+        "size": "L",
+        "color": "Blanco",
+        "stock": 5
+      },
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 10
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 15
+      }
+    ],
+    "totalStock": 50
+  },
+  {
+    "name": "CamisaHawaiana",
+    "price": 27.99,
+    "category": "Camisas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Rojo",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Rojo",
+        "stock": 25
+      },
+      {
+        "size": "L",
+        "color": "Rojo",
+        "stock": 15
+      },
+      {
+        "size": "S",
+        "color": "Azul",
+        "stock": 30
+      },
+      {
+        "size": "M",
+        "color": "Azul",
+        "stock": 35
+      }
+    ],
+    "totalStock": 125
+  },
+  {
+    "name": "CamisaDeLino",
+    "price": 34.99,
+    "category": "Camisas",
+    "variants": [
+      {
+        "size": "S",
+        "color": "Beige",
+        "stock": 25
+      },
+      {
+        "size": "M",
+        "color": "Beige",
+        "stock": 30
+      },
+      {
+        "size": "L",
+        "color": "Beige",
+        "stock": 20
+      },
+      {
+        "size": "S",
+        "color": "Blanco",
+        "stock": 35
+      },
+      {
+        "size": "M",
+        "color": "Blanco",
+        "stock": 40
+      }
+    ],
+    "totalStock": 150
+  },
+  {
+    "name": "PantalonDeVestir",
+    "price": 49.99,
+    "category": "Pantalones",
+    "variants": [
+      {
+        "size": "28",
+        "color": "Negro",
+        "stock": 10
+      },
+      {
+        "size": "30",
+        "color": "Negro",
+        "stock": 15
+      },
+      {
+        "size": "32",
+        "color": "Negro",
+        "stock": 8
+      },
+      {
+        "size": "28",
+        "color": "Gris",
+        "stock": 12
+      },
+      {
+        "size": "30",
+        "color": "Gris",
+        "stock": 20
+      }
+    ],
+    "totalStock": 65
+  }
+]
