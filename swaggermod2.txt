@@ -1,0 +1,174 @@
+openapi: 3.1.0
+info:
+  title: SyncStock Solutions
+  description: |-
+    Documentación de la API para realizar pruebas. Desarrollado por Daniel López y Frank Emilio
+
+    [GitHub](https://github.com/dani18z/TFG/tree/Dani)
+  
+  version: 1.0.11
+servers:
+  - url: http://127.0.0.1:5000
+tags:
+  - name: API QR
+    description: Generar QR, consultar stock, y sumar y restar stock del QR.
+paths:
+  /generator_qr:
+    get:
+      tags:
+        - API QR
+      description: Generar código QR para un paquete
+      parameters:
+        - name: name
+          in: query
+          description: 'Nombre del producto'
+          required: true
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: 'Talla de la variante'
+          required: true
+          schema:
+            type: string 
+        - name: color
+          in: query
+          description: 'Color de la variante'
+          required: true
+          schema:
+            type: string
+        - name: stock
+          in: query
+          description: 'Stock a introducir'
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/qr'
+        '401': 
+          description: No credentials
+        '400':
+          description: Invalid input
+        '404':
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
+      
+  /query_stock:
+    get:
+      tags:
+        - API QR
+      description: Consultar stock de una variante
+      parameters:
+        - name: name
+          in: query
+          description: 'Nombre del producto'
+          required: true
+          schema:
+            type: string
+        - name: size
+          in: query
+          description: 'Talla de la variante'
+          required: true
+          schema:
+            type: string 
+        - name: color
+          in: query
+          description: 'Color de la variante'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+        '401': 
+          description: No credentials
+        '400':
+          description: Invalid status value
+        '404':
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
+  /sum_stock:
+    post:
+      tags: 
+        - API QR
+      description: Actualización stock base de datos debido a paquete de entrada (suma)
+      requestBody:
+        content:
+          application/json:
+              schema:
+                $ref: '#/components/schemas/qr'
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '401': 
+          description: No credentials
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid status value
+        '404':
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
+
+  /subtract_stock:
+    post:
+      tags: 
+        - API QR
+      description: Actualización stock base de datos debido a paquete de salida (resta)
+      requestBody:
+        content:
+          application/json:
+            schema:
+                $ref: '#/components/schemas/qr'
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '401': 
+          description: No credentials
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid status value
+        '404':
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
+
+components:
+  schemas:
+    qr:
+      type: object
+      properties:
+        name:
+          type: string
+          example: CamisaMangaCorta
+        size:
+          type: string
+          example: S
+        color:
+          type: string
+          example: Blanco
+        stock:
+          type: integer
+          example: 20
+    
