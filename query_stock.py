@@ -23,15 +23,15 @@ def query_stock():
             variant = next((v for v in product["variants"] if v["size"] == size and v["color"] == color), None)
             if variant:
                 stock = variant["stock"]
-                return jsonify({"product": product_name, "size": size, "color": color, "stock": stock})
+                return "Stock: " + stock, 200
             else:
-                return jsonify({"error": "No se encontró la variante especificada para el producto '{}'.".format(product_name)}), 404
+                return "No se encontró la variante especificada para el producto " + product_name, 404
         else:
             # Devolver stock de todas las variantes si no se especifica talla y color
             stock_variants = [{"size": v["size"], "color": v["color"], "stock": v["stock"]} for v in product["variants"]]
-            return jsonify({"product": product_name, "stock_variants": stock_variants})
+            return "Stock total de las variantes de " + product_name + ": " + stock_variants   
     else:
-        return jsonify({"error": "El producto '{}' no fue encontrado en la base de datos.".format(product_name)}), 404
+        return "El producto "+ product_name + " no fue encontrado en la base de datos.", 404
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=5000, debug=True)
