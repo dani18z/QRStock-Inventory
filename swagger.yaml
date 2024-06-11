@@ -1,22 +1,24 @@
 openapi: 3.1.0
+security:
+  - basic-auth: []
 info:
-  title: Swagger TFG Dani & Frank
+  title: SyncStock Solutions
   description: |-
-    This is a sample Pet Store Server based on the OpenAPI 3.1 specification.  You can find out more about
-    Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
-    You can now help us improve the API whether it's by making changes to the definition itself or to the code.
-    That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
+    Documentación de la API para realizar pruebas. Desarrollado por Daniel López y Frank Emilio
 
-    Some useful links:
-    - [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)
-    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+    [GitHub](https://github.com/dani18z/TFG/tree/Dani)
+    
+    [Presentación](https://frankefdzmtz.wixsite.com/syncstock-solutions)
+  
   version: 1.0.11
-
 servers:
   - url: http://127.0.0.1:5000
+    description: Almacen_01
+  - url: http://127.0.0.1:5001
+    description: Almacen_02
 tags:
   - name: API QR
-    description: Generar QR, consultar stock, y sumar y restar stock del QR.
+    description: Generar QR, consultar y actualizar stock.
 paths:
   /generator_qr:
     get:
@@ -51,105 +53,111 @@ paths:
       responses:
         '200':
           description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/qr'
+        '401': 
+          description: No credentials
         '400':
           description: Invalid input
+        '404':
+          description: Undocumented
         '422':
           description: Validation exception
         '500':
           description: Internal error service
       
-  /pet/findByStatus:
+  /query_stock:
     get:
       tags:
         - API QR
-      summary: Finds Pets by status
-      description: Multiple status values can be provided with comma separated strings
-      operationId: findPetsByStatus
+      description: Consultar stock de una variante o el total de un producto
       parameters:
-        - name: status
+        - name: name
           in: query
-          description: Status values that need to be considered for filter
-          required: false
-          explode: true
+          description: 'Nombre del producto'
+          required: true
           schema:
             type: string
-            default: available
-            enum:
-              - available
-              - pending
-              - sold
+        - name: size
+          in: query
+          description: 'Talla de la variante'
+          schema:
+            type: string 
+        - name: color
+          in: query
+          description: 'Color de la variante'
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+        '401': 
+          description: No credentials
+        '400':
+          description: Invalid status value
+        '404':
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
+  /sum_stock:
+    post:
+      tags: 
+        - API QR
+      description: Actualización del stock  debido a paquete de entrada (suma)
       requestBody:
-        description: Create a new pet in the store
+        required: true
+        content:
+          application/json:
+              schema:
+                $ref: '#/components/schemas/qr'
+          application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/file'
+      responses:
+        '401': 
+          description: No credentials
+        '200':
+          description: Successful operation
+        '400':
+          description: Invalid status value
+        '404':
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
+
+  /subtract_stock:
+    post:
+      tags: 
+        - API QR
+      description: Actualización del stock debido a paquete de salida (resta)
+      requestBody:
+        required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/qr'
-        required: false
+                $ref: '#/components/schemas/qr'
+          application/octet-stream:
+            schema:
+                $ref: '#/components/schemas/file'
       responses:
+        '401': 
+          description: No credentials
         '200':
-          description: successful operation
+          description: Successful operation
         '400':
           description: Invalid status value
-      security:
-        - petstore_auth:
-            - write:pets
-            - read:pets
-  /pet/findByTags:
- 
-  /pet/{petId}:
-    get:
-      tags:
-        - API QR
-      summary: Find pet by ID
-      description: Returns a single pet
-      operationId: getPetById
-      parameters:
-        - name: petId
-          in: path
-          description: ID of pet to return
-          required: true
-          schema:
-            type: integer
-            format: int64
-      responses:
-        '200':
-          description: successful operation
-        '400':
-          description: Invalid ID supplied
         '404':
-          description: Pet not found
-      security:
-        - api_key: []
-        - petstore_auth:
-            - write:pets
-            - read:pets
-    post:
-      tags:
-        - API QR
-      summary: Updates a pet in the store with form data
-      description: ''
-      operationId: updatePetWithForm
-      parameters:
-        - name: petId
-          in: path
-          description: ID of pet that needs to be updated
-          required: true
-          schema:
-            type: integer
-            format: int64
-        - name: name
-          in: query
-          description: Name of pet that needs to be updated
-          schema:
-            type: string
-        - name: status
-          in: query
-          description: Status of pet that needs to be updated
-          schema:
-            type: string
-      responses:
-        '400':
-          description: Invalid input
+          description: Undocumented
+        '422':
+          description: Validation exception
+        '500':
+          description: Internal error service
 
 components:
   schemas:
@@ -168,4 +176,6 @@ components:
         stock:
           type: integer
           example: 20
-    
+    file:
+      type: string
+      format: binary
