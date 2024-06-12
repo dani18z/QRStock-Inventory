@@ -1,0 +1,9 @@
+Python 3.x y MongoDB
+
+--LIBRERIAS--
+pip install flask
+pip install flask-cors
+pip install flask-swagger-ui
+pip install pymongo
+pip install pyqrcode
+pip install bson

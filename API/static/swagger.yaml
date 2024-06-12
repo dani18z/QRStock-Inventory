@@ -1,8 +1,6 @@
-openapi: 3.1.0
-security:
-  - basic-auth: []
+openapi: 3.0.0
 info:
-  title: SyncStock Solutions
+  title: SyncStock Inventory Manager
   description: |-
     Documentación API para administradores. Desarrollado por Daniel López y Frank Emilio
 
@@ -10,7 +8,7 @@ info:
     
     [Presentación](https://frankefdzmtz.wixsite.com/syncstock-solutions)
   
-  version: 1.0.11
+  version: "2.0"
 servers:
   - url: http://127.0.0.1:5000
     description: Almacen_01
