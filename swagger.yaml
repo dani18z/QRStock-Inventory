@@ -4,7 +4,7 @@ security:
 info:
   title: SyncStock Solutions
   description: |-
-    Documentación de la API para realizar pruebas. Desarrollado por Daniel López y Frank Emilio
+    Documentación API para administradores. Desarrollado por Daniel López y Frank Emilio
 
     [GitHub](https://github.com/dani18z/TFG/tree/Dani)
     
@@ -60,7 +60,7 @@ paths:
         '401': 
           description: No credentials
         '400':
-          description: Invalid input
+          description: El stock solicitado es mayor que el disponible
         '404':
           description: Undocumented
         '422':
@@ -125,7 +125,7 @@ paths:
         '400':
           description: Invalid status value
         '404':
-          description: Undocumented
+          description: No se encontró la ruta solicitada
         '422':
           description: Validation exception
         '500':
@@ -153,7 +153,7 @@ paths:
         '400':
           description: Invalid status value
         '404':
-          description: Undocumented
+          description: No se encontró la ruta solicitada
         '422':
           description: Validation exception
         '500':
