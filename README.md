@@ -1,2 +1,2 @@
 
-<img src="imgs-readme/portada.png">
+<img src="imgs-readme/frontpg.png">
