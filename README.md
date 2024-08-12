@@ -31,7 +31,7 @@ This is an example of the schema used to structure the inventory of a clothing c
 
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white">
 
-Incredibly versatile and adaptable, allowing us to constantly improve and enhance the platform as your needs evolve.
+Incredibly versatile and adaptable, allowing you to constantly improve and enhance the platform as your needs evolve.
 
 <br>
 
