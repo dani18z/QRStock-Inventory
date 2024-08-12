@@ -22,7 +22,7 @@ This is an example of the schema used to structure the inventory of a clothing c
 
 ### UI Sketch
 (In progress, not developed yet) Clothing company example.
-<br>
+<br><br>
 <img src="imgs-readme/interface.png"  alt="Sketch" width="500" height="auto">
 
 <br>
@@ -42,6 +42,7 @@ Grow Your Business, Not Your Inventory Headaches: NoSQL-Powered Scalability for 
 <br>
 
  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+ 
  Intuitive Interface, Exceptional User Experience.
 
 <br>
